@@ -1,3 +1,5 @@
+import Img from "@/components/general/Img";
+
 export type SkillsDataType = { [key: string]: { iconPath: string; title: string; description?: string } };
 
 export const Skills_Data: SkillsDataType = {
@@ -49,7 +51,21 @@ export const Qualifications_Paths = [
 ];
 
 export const INFO = [
-  { iconPath: "/assets/icons/phone.svg", title: "+972 52-6894325" },
-  { iconPath: "/assets/icons/mail.svg", title: "info@majdmousa.com" },
-  { iconPath: "/assets/icons/web.svg", title: "www.majdmousa.com" },
+  <div key="1" className="flex justify-start items-center gap-2">
+    <Img alt="info-icon" width={16} height={16} src="/assets/icons/phone.svg" />
+    <p className="font-medium text-lg">+972 52-6894325</p>
+  </div>,
+
+  <div key="2" className="flex justify-start items-center gap-2">
+    <Img alt="info-icon" width={16} height={16} src="/assets/icons/mail.svg" />
+    <a href="mailto: info@majdmousa.com" className="font-medium text-lg">
+      info@majdmousa.com
+    </a>
+  </div>,
+  <div key="3" className="flex justify-start items-center gap-2">
+    <Img alt="info-icon" width={16} height={16} src="/assets/icons/web.svg" />
+    <a href="www.majdmousa.com" target="_blank" className="font-medium text-lg">
+      www.majdmousa.com
+    </a>
+  </div>,
 ];

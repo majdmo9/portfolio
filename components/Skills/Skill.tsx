@@ -1,6 +1,5 @@
-import React from "react";
-import Img from "../general/Img";
 import { Skills_Data } from "@/utils/constants";
+import Img from "../general/Img";
 
 const Skill = ({ skill, boldTitle = false }: { skill: string; boldTitle?: boolean }) => {
   return (
