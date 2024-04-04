@@ -16,7 +16,7 @@ const Bio = () => {
       <p className="text-xs lg:text-2xl lg:leading-8 leading-tight lg:mt-4 mt-1 lg:max-w-md max-w-[30ch]">
         I like to craft solid and develop Full Stack products with great user experiences.
       </p>
-      <a href="/assets/files/Majd-CV.pdf" target="_blank">
+      <a href="/assets/files/Majd-Mousa-CV.pdf" target="_blank">
         <button className="text-xs lg:text-lg border border-1 border-white rounded-full lg:px-3 px-1 lg:mt-7 mt-3 before:ease relative overflow-hidden text-white shadow-xl transition-all before:absolute before:right-4 before:top-0 before:h-12 before:w-6 before:-translate-x-40 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:translate-x-40">
           DOWNLOAD CV {">"}
         </button>
