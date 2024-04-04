@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #ffffff;
+}
+
+@font-face {
+  font-family: "avenir-bold";
+  src: url("/assets/fonts/AvenirNextCyr-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-demi";
+  src: url("/assets/fonts/AvenirNextCyr-Demi.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-light";
+  src: url("/assets/fonts/AvenirNextCyr-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-heavy";
+  src: url("/assets/fonts/AvenirNextCyr-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-medium";
+  src: url("/assets/fonts/AvenirNextCyr-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-thin";
+  src: url("/assets/fonts/AvenirNextCyr-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-ultrathin";
+  src: url("/assets/fonts/AvenirNextCyr-UltraLight.ttf") format("truetype");
+}
+@font-face {
+  font-family: "avenir-normal";
+  src: url("/assets/fonts/AvenirNextCyr-Regular.ttf") format("truetype");
+}
+
+.outlined-text {
+  -webkit-text-stroke: 2px #ffffff; /* For WebKit-based browsers (Chrome, Safari, etc.) */
+  text-stroke: 2px #ffffff; /* For newer browsers supporting the text-stroke property */
+  color: transparent;
+}
+
+.wave {
+  animation-name: wave;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  display: inline-block;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
