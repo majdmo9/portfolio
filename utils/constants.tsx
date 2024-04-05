@@ -64,7 +64,7 @@ export const INFO = [
   </div>,
   <div key="3" className="flex justify-start items-center gap-2">
     <Img alt="info-icon" width={16} height={16} src="/assets/icons/web.svg" />
-    <a href="www.majdmousa.com" target="_blank" className="font-medium text-lg">
+    <a href="https://www.majdmousa.com" target="_blank" className="font-medium text-lg">
       www.majdmousa.com
     </a>
   </div>,
