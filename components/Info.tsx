@@ -1,10 +1,17 @@
+import { useTranslation } from "react-i18next";
 import { INFO } from "@/utils/constants";
+import { useDir } from "@/hooks/useDir";
+import LangSelector from "./lib/LangSelector";
 
-const Info = () => {
+const Info = ({ locale }: { locale: string }) => {
+  const { t } = useTranslation();
+  const { dir } = useDir();
+
   return (
-    <div className="flex flex-col justify-start lg:items-start items-center gap-2">
+    <div className="flex flex-col justify-start lg:items-start items-center gap-2" dir={dir}>
       {INFO.map(el => el)}
-      <p className="font-medium text-lg">NAZARETH, ISRAEL ZIP CODE 1613101</p>
+      <p className="font-medium text-lg">{t("location")}</p>
+      <LangSelector locale={locale} />
     </div>
   );
 };

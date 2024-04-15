@@ -5,35 +5,35 @@ export type SkillsDataType = { [key: string]: { iconPath: string; title: string;
 export const Skills_Data: SkillsDataType = {
   frontend: {
     iconPath: "/assets/icons/frontend.svg",
-    title: "Frontend Development",
-    description: "(HTML, CSS, TypeScript, React)",
+    title: "fe-dev",
+    description: "fe-desc",
   },
   backend: {
     iconPath: "/assets/icons/backend.svg",
-    title: "Backend Development",
-    description: "(RESTful API, Node.js, Express.js, FastAPI)",
+    title: "be-dev",
+    description: "be-desc",
   },
   mobile: {
     iconPath: "/assets/icons/mobile.svg",
-    title: "Mobile Development",
-    description: "(React Native, Expo)",
+    title: "mobile-dev",
+    description: "mobile-desc",
   },
   databases: {
     iconPath: "/assets/icons/database.svg",
-    title: "Databases",
-    description: "(Firebase, Redis, MongoDB, MySQL)",
+    title: "db-dev",
+    description: "db-desc",
   },
   responsive: {
     iconPath: "/assets/icons/responsive.svg",
-    title: "Responsive Design",
+    title: "responsive-dev",
   },
   agile: {
     iconPath: "/assets/icons/agile.svg",
-    title: "Agile Methodology Proficiency",
+    title: "agile-dev",
   },
   technical: {
     iconPath: "/assets/icons/technical.svg",
-    title: "Technical Support",
+    title: "tech-support",
   },
 };
 
@@ -53,7 +53,9 @@ export const Qualifications_Paths = [
 export const INFO = [
   <div key="1" className="flex justify-start items-center gap-2">
     <Img alt="info-icon" width={16} height={16} src="/assets/icons/phone.svg" />
-    <p className="font-medium text-lg">+972 52-6894325</p>
+    <p className="font-medium text-lg" dir="ltr">
+      +972 52-6894325
+    </p>
   </div>,
 
   <div key="2" className="flex justify-start items-center gap-2">

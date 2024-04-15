@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { Qualifications_Paths } from "@/utils/constants";
 import Img from "./general/Img";
 import useIsMobile from "@/hooks/useIsMobile";
 
 const Qualifications = () => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
   if (!isMobile) {
     return (
       <>
-        <p className="font-bold text-[#29235C] lg:text-4xl text-2xl">QUALIFICATIONS</p>
+        <p className="font-bold text-[#29235C] lg:text-4xl text-2xl">{t("qualifications")}</p>
         <div className="flex justify-center items-center lg:gap-12 gap-5 flex-wrap">
           {Qualifications_Paths.map(qualification => (
             <Img
@@ -26,7 +28,7 @@ const Qualifications = () => {
 
   return (
     <>
-      <p className="font-bold text-[#29235C] lg:text-4xl text-2xl">QUALIFICATIONS</p>
+      <p className="font-bold text-[#29235C] lg:text-4xl text-2xl">{t("qualifications")}</p>
       <div className="relative flex flex-col gap-4">
         <div className="flex justify-center items-center lg:gap-12 gap-5 flex-wrap">
           {Qualifications_Paths.slice(0, 4).map(qualification => (

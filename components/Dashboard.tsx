@@ -1,4 +1,5 @@
 "use client";
+import { useTranslation } from "react-i18next";
 import AboutMe from "./AboutMe";
 import Bio from "./Bio";
 import Img from "./general/Img";
@@ -8,13 +9,17 @@ import Qualifications from "./Qualifications";
 import ContactMe from "./ContactMe";
 import useIsMobile from "@/hooks/useIsMobile";
 import Info from "./Info";
+import { useDir } from "@/hooks/useDir";
 
-const Dashboard = () => {
+const Dashboard = ({ params: { locale } }: { params: { locale: string } }) => {
   const isMobile = useIsMobile();
+  const { t } = useTranslation();
+  const { dir } = useDir();
+
   return (
-    <div className="flex flex-col min-w-full overflow-hidden">
+    <div className="flex flex-col min-w-full overflow-hidden relative">
       <section className="pt-4 md:pt-0 flex lg:justify-center justify-between w-full h-full md:items-center relative bg-[url('/assets/images/mobile-bg.png')] md:bg-[url('/assets/images/bg1.png')] bg-auto bg-no-repeat bg-top">
-        <div className="w-full xl:w-1/2 flex justify-end">
+        <div className="w-full xl:w-1/2 flex justify-start">
           <Bio />
         </div>
         <div className="flex justify-center items-center xl:w-1/2 w-3/4 max-h-screen h-full -ml-48 -mr-20 xl:mx-0">
@@ -26,7 +31,9 @@ const Dashboard = () => {
       </section>
       <section className="min-h-screen flex flex-col justify-between bg-[rgb(236,236,236)]">
         <div className="lg:px-36 px-6 pt-16">
-          <p className="font-bold text-[#29235C] lg:text-6xl text-3xl">Skills..</p>
+          <p className="font-bold text-[#29235C] lg:text-6xl text-3xl w-fit" dir={dir}>
+            {t("skills")}..
+          </p>
         </div>
         <div className="relative flex h-full flex-col">
           <div className="w-full flex justify-center xl:-mb-80 md:-mb-44 -mb-20">
@@ -43,7 +50,8 @@ const Dashboard = () => {
       <section className="bg-[#1D1D1B] flex justify-center items-start p-12 lg:p-24 lg:gap-32 gap-8 flex-wrap">
         {isMobile ? (
           <p className="lg:text-5xl text-3xl font-bold">
-            CONTACT<span className="font-light">ME..</span>
+            {t("contact")}
+            <span className="font-light">{t("me")}</span>
           </p>
         ) : (
           <></>
@@ -51,14 +59,15 @@ const Dashboard = () => {
         {!isMobile ? (
           <div className="flex flex-col justify-start items-start gap-4">
             <p className="lg:text-5xl text-3xl font-bold mx-auto">
-              CONTACT<span className="font-light">ME..</span>
+              {t("contact")}
+              <span className="font-light">{t("me")}</span>
             </p>
-            <Info />
+            <Info locale={locale} />
           </div>
         ) : (
           <ContactMe />
         )}
-        {isMobile ? <Info /> : <ContactMe />}
+        {isMobile ? <Info locale={locale} /> : <ContactMe />}
       </section>
     </div>
   );
