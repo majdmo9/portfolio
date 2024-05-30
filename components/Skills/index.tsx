@@ -1,8 +1,10 @@
 import { Skills_Data_Titles } from "@/utils/constants";
 import Skill from "./Skill";
 import useIsMobile from "@/hooks/useIsMobile";
+import { useDir } from "@/hooks/useDir";
 
 const Skills = () => {
+  const { dir } = useDir();
   const isMobile = useIsMobile();
   if (isMobile) {
     return (
@@ -19,7 +21,7 @@ const Skills = () => {
     );
   }
   return (
-    <div className="bg-[#29235C] flex justify-center h-full p-24 gap-24 items-center">
+    <div dir={dir} className="bg-[#29235C] flex justify-center h-full p-24 gap-24 items-center">
       <div className="flex gap-4 max-w-4xl flex-col">
         {Skills_Data_Titles.slice(0, 4).map(skill => (
           <Skill key={skill} skill={skill} />

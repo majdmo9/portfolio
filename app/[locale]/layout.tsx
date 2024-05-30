@@ -4,6 +4,10 @@ import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 import TranslationsProvider from "@/context/TranslationsProvider";
 import initTranslations from "../i18n";
+import { Cairo, Noto_Sans_Hebrew } from "next/font/google";
+
+const cairo = Cairo({ subsets: ["arabic"], weight: ["200", "300", "400", "500", "600", "700", "800", "900"] });
+const notoSans = Noto_Sans_Hebrew({ subsets: ["hebrew"], weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"] });
 
 export const metadata: Metadata = {
   title: "Majd Mousa",
@@ -19,6 +23,16 @@ export default async function RootLayout({
   params: { locale: "en" | "ar" | "he" };
 }>) {
   const { resources } = await initTranslations(locale);
+
+  const font = () => {
+    if (locale === "ar") {
+      return cairo.className;
+    } else if (locale === "he") {
+      return notoSans.className;
+    }
+    return "font-normal";
+  };
+
   return (
     <html lang={locale}>
       <head>
@@ -27,7 +41,7 @@ export default async function RootLayout({
         <meta property="og:image:width" content="<generated>" />
         <meta property="og:image:height" content="<generated>" />
       </head>
-      <body className="font-normal">
+      <body className={font()}>
         <TranslationsProvider locale={locale} resources={resources} namespaces="translation">
           <ToastContainer />
           {children}

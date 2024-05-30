@@ -30,7 +30,6 @@ const LottieAnimation: React.FC<LottieAnimationProps> = ({ animationData }) => {
         }
       }
     };
-    console.log("yes");
     importLottie();
   }, [animationData]);
 

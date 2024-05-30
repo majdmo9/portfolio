@@ -3,7 +3,7 @@ import { useDir } from "@/hooks/useDir";
 import useIsMobile from "@/hooks/useIsMobile";
 import { useTranslation } from "react-i18next";
 
-const Bio = () => {
+const Bio = ({ locale }: { locale: string }) => {
   const isMobile = useIsMobile();
   const { t } = useTranslation();
   const { dir } = useDir();
@@ -11,8 +11,16 @@ const Bio = () => {
   return (
     <div className="w-fit lg:pl-40 md:pl-4 pl-2 flex flex-col justify-center items-start h-full" dir={dir}>
       <div className="flex flex-col justify-center items-start w-full">
-        <p className="text-sm lg:text-[1.8rem] mb-2 tracking-widest font-normal w-full leading-tight">{t("full-stack-dev")}</p>
-        <h1 className="text-3xl lg:text-[4.5rem] lg:mb-2 mb-0 tracking-widest lg:font-bold font-demi outlined-text leading-none">
+        <p className={`text-sm lg:text-[1.8rem] mb-2 ${locale === "en" ? "tracking-widest" : "tracking-normal"} font-normal w-full leading-tight`}>
+          {t("full-stack-dev")}
+        </p>
+        <h1
+          className={
+            locale === "en"
+              ? "text-3xl lg:text-[4.5rem] lg:mb-2 mb-0 tracking-widest lg:font-bold font-semibold outlined-text leading-none"
+              : "text-3xl lg:text-[4.5rem] lg:mb-2 mb-0 lg:font-bold font-semibold leading-none"
+          }
+        >
           {t("hello")} {isMobile ? <span>{t("im")}</span> : <></>}
         </h1>
         <h1 className="text-4xl max-w-[5ch] lg:max-w-[35ch] lg:text-[4.5rem] font-bold lg:leading-none leading-sung">

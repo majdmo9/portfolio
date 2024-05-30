@@ -10,6 +10,7 @@
   font-family: "avenir-bold";
   src: url("/assets/fonts/AvenirNextCyr-Bold.ttf") format("truetype");
 }
+
 @font-face {
   font-family: "avenir-demi";
   src: url("/assets/fonts/AvenirNextCyr-Demi.ttf") format("truetype");

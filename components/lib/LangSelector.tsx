@@ -26,7 +26,7 @@ const LangSelector = ({ locale }: { locale: string }) => {
     <select
       onChange={handleSelect}
       value={selectedLang}
-      className="bg-gradient-to-tr from-[#4D2BB9] via-[#7436D7] to-[#C14DFD] font-demi bg-clip-text text-transparent focus:outline-none focus:ring-2 focus:ring-[#3919BB] focus:border-[#3919BB] cursor-pointer"
+      className="bg-gradient-to-tr from-[#4D2BB9] via-[#7436D7] to-[#C14DFD] font-semibold bg-clip-text text-transparent focus:outline-none focus:ring-2 focus:ring-[#3919BB] focus:border-[#3919BB] cursor-pointer"
     >
       <option value="ar" className="flex items-center gap-2">
         العربية

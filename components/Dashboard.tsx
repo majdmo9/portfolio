@@ -20,7 +20,7 @@ const Dashboard = ({ params: { locale } }: { params: { locale: string } }) => {
     <div className="flex flex-col min-w-full overflow-hidden relative">
       <section className="pt-4 md:pt-0 flex lg:justify-center justify-between w-full h-full md:items-center relative bg-[url('/assets/images/mobile-bg.png')] md:bg-[url('/assets/images/bg1.png')] bg-auto bg-no-repeat bg-top">
         <div className="w-full xl:w-1/2 flex justify-start">
-          <Bio />
+          <Bio locale={locale} />
         </div>
         <div className="flex justify-center items-center xl:w-1/2 w-3/4 max-h-screen h-full -ml-48 -mr-20 xl:mx-0">
           <Img width={1100} height={1100} src="/assets/svg/majd.svg" className="object-cover w-full h-full" alt="majds-pic" />
