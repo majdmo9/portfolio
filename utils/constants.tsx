@@ -51,13 +51,6 @@ export const Qualifications_Paths = [
 ];
 
 export const INFO = [
-  <div key="1" className="flex justify-start items-center gap-2">
-    <Img alt="info-icon" width={16} height={16} src="/assets/icons/phone.svg" />
-    <p className="font-medium text-lg" dir="ltr">
-      +972 52-6894325
-    </p>
-  </div>,
-
   <div key="2" className="flex justify-start items-center gap-2">
     <Img alt="info-icon" width={16} height={16} src="/assets/icons/mail.svg" />
     <a href="mailto: info@majdmousa.com" className="font-medium text-lg">
