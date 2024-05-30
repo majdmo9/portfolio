@@ -23,7 +23,7 @@ const Bio = ({ locale }: { locale: string }) => {
         >
           {t("hello")} {isMobile ? <span>{t("im")}</span> : <></>}
         </h1>
-        <h1 className="text-4xl max-w-[5ch] lg:max-w-[35ch] lg:text-[4.5rem] font-bold lg:leading-none leading-sung">
+        <h1 className="text-3xl  lg:max-w-[35ch] lg:text-[4.5rem] font-bold lg:leading-none leading-sung">
           {isMobile ? <></> : <span>{t("im")}</span>} {t("majd-mousa")}
         </h1>
       </div>
